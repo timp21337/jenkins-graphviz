@@ -15,4 +15,4 @@ Usage example
           --username <username> --password <password>
           | dot -Tsvg > some_view.svg
 
-![Output](some_view.svg)
+![Output](http://timp21337.github.io/jenkins-graphviz/some_view.svg)
