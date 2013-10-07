@@ -6,7 +6,6 @@ Requirements
 
  * Python 2.7
  * [lxml](http://lxml.de/)
- * GraphVIS
 
 Usage example
 -------------
@@ -15,4 +14,7 @@ Usage example
           --username <username> --password <password>
           | dot -Tsvg > some_view.svg
 
+
 ![Output](http://timp21337.github.io/jenkins-graphviz/some_view.svg)
+
+If no argument is specified then the *All* view is assumed.
