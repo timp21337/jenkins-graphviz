@@ -78,10 +78,14 @@ def api_fetch(url, username=None, password=None):
 
 
 def fix_job(job):
+    if job['color'] == 'notbuilt':
+        job['color'] = 'grey'
     if job['color'] == 'disabled':
         job['color'] = 'grey'
     if job['color'] == 'blue_anime':
         job['color'] = 'blue'
+    if job['color'] == 'red_anime':
+        job['color'] = 'red'
     return job
 
 
