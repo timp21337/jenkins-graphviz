@@ -4,8 +4,9 @@ Jenkins-Graphviz
 Requirements
 ------------
 
- * Python 2.7
+ * Python 2.6
  * [lxml](http://lxml.de/)
+ *
 
 Usage example
 -------------
@@ -16,5 +17,13 @@ Usage example
 
 
 ![Output](http://timp21337.github.io/jenkins-graphviz/some_view.svg)
+
+TO print out all but a few excluded projects:
+
+      python jenkins_views.py http://hades:8081 | \
+      while read p;
+      do
+         python jenkins_graphviz.py http://hades:8081  -v "$p" |dot -Tsvg > "${p}.svg";
+      done
 
 If no argument is specified then the *All* view is assumed.
