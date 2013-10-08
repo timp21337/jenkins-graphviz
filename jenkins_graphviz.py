@@ -44,7 +44,7 @@ $view_jobs
 
 
 def view_url(base, view):
-    '''
+    """
     >>> view_url('http://server/', '')
     'http://server/'
     >>> view_url('http://server/', 'All')
@@ -53,8 +53,7 @@ def view_url(base, view):
     'http://server/view/With%20Space/'
     >>> view_url('http://server', 'missing_slash')
     'http://server/view/missing_slash/'
-
-    '''
+    """
     return urlparse.urljoin(base, 'view/{0}/'.format(urllib.quote(view)) if view else '')
 
 
@@ -78,6 +77,11 @@ def api_fetch(url, username=None, password=None):
 
 
 def fix_job(job):
+    """
+    Jenkins puts some strange things into color.
+    :param job:
+    :return: fixed job
+    """
     if job['color'] == 'notbuilt':
         job['color'] = 'grey'
     if job['color'] == 'disabled':
