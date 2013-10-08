@@ -41,7 +41,7 @@ def main():
 
     for view in api_fetch(views_url, args.username, args.password)['views']:
         if view['name'] not in ['All', '_Active', '_Disabled']:
-            print("\"%s\"" % view['name'])
+            print(view['name'])
 
 if __name__ == '__main__':
     main()
