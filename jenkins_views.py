@@ -40,7 +40,7 @@ def main():
     views_url = urlparse.urljoin(args.server, "/api/json/views")
 
     for view in api_fetch(views_url, args.username, args.password)['views']:
-        if view['name'] != 'All':
+        if view['name'] not in ['All', '_Active', '_Disabled']:
             print("\"%s\"" % view['name'])
 
 if __name__ == '__main__':
